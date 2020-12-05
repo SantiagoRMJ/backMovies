@@ -17,7 +17,11 @@ app.get('/', (req, res) => {
     res.send('proyecto backend movies react');
 });
 app.post('/register', (req,res)=>{
-    const newUser = new User(req.body);
+    const newUser = new User({
+        name:req.body.name,
+        pass: req.body.pass,
+        email: req.body.email
+        })
         newUser.save();
         res.json(`${newUser} Ha sido INTRODUCIDO con exito`);
 });

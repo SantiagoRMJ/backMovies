@@ -6,7 +6,6 @@ module.exports.Usersdb = mongoose.model('User', new Schema({
     name:{
         type: String,
         required: true,
-        unique: true
     },
     pass:{
         type: String,
@@ -14,7 +13,8 @@ module.exports.Usersdb = mongoose.model('User', new Schema({
     },
     email:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     rol:{
         type: String,
