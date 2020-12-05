@@ -23,7 +23,7 @@ createToken = (user) =>{
 exports.registro = async (req, res) => {
     req.body.pass = bcrypt.hashSync(req.body.pass, 3);    
     try {
-        const nuevoUsuario = await Usuario.create({
+        const nuevoUsuario = await User.create({
             name: req.body.name,
             pass: req.body.pass,
             email: req.body.email,
