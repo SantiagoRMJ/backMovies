@@ -1,8 +1,10 @@
 
 const mongoose = require("mongoose");
-const {Schema} = mongoose;  //module.exports = mongoose.Schema;
+//const {Schema} = mongoose;  //module.exports = mongoose.Schema;
 
-module.exports.Usersdb = mongoose.model('User', new Schema({
+//User = mongoose.model('User', new Schema({
+
+const UserSchema = new mongoose.Schema({    
     name:{
         type: String,
         required: true,
@@ -21,4 +23,6 @@ module.exports.Usersdb = mongoose.model('User', new Schema({
         default: 'USER',
         enum: ['ADMIN', 'USER']
     }
-}))
+})
+
+module.exports = mongoose.model('User', UserSchema)

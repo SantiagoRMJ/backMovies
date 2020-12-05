@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose =require('mongoose');
 const cors = require('cors')
-const User = require('./components/usuario/model')
+const User = require('./components/usuario/model.js')
 
 const MongoURI = process.env.MongoURI || 'mongodb://localhost:27017/backmovie'
 
