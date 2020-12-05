@@ -23,7 +23,7 @@ app.post('/register', (req,res)=>{
         email: req.body.email
         })
         newUser.save();
-        res.json(`${newUser} Ha sido INTRODUCIDO con exito`);
+        res.json(newUser, "Usuario creado correctamente");
 });
 
 mongoose.connect(MongoURI,{

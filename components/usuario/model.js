@@ -1,8 +1,5 @@
 
 const mongoose = require("mongoose");
-//const {Schema} = mongoose;  //module.exports = mongoose.Schema;
-
-//User = mongoose.model('User', new Schema({
 
 const UserSchema = new mongoose.Schema({    
     name:{
