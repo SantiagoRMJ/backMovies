@@ -3,6 +3,7 @@ const mongoose =require('mongoose');
 const cors = require('cors')
 //const User = require('./components/usuario/model.js');
 const routerUser = require('./components/usuario/router');
+const routerRent = require('./components/alquiler/router');
 
 const MongoURI = process.env.MongoURI || 'mongodb://localhost:27017/backmovie'
 
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
     res.send('proyecto backend movies react');
 });
 app.use('/user', routerUser);
+app.use('/rent', routerRent);
 
 
 mongoose.connect(MongoURI,{
