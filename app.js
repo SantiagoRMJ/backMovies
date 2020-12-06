@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose =require('mongoose');
 const cors = require('cors')
-const User = require('./components/usuario/model.js')
+const User = require('./components/usuario/model.js');
+const routerUser = require('./components/usuario/router');
 
 const MongoURI = process.env.MongoURI || 'mongodb://localhost:27017/backmovie'
 
@@ -9,22 +10,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+app.use('/user', routerUser);
 
 const PORT = process.env.PORT || 3001;
 
 app.get('/', (req, res) => {
     res.send('proyecto backend movies react');
 });
-app.post('/register', (req,res)=>{
-    const newUser = new User({
-        name:req.body.name,
-        pass: req.body.pass,
-        email: req.body.email
-        })
-        newUser.save();
-        res.json(newUser);
-});
+
 
 mongoose.connect(MongoURI,{
 useNewUrlParser: true,

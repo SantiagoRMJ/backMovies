@@ -39,9 +39,9 @@ exports.registro = async (req, res) => {
 exports.login = async (req, res)=>{
     try{
     const name = req.body.name;
-    let data = await User.findOne({ where: {email: req.body.email}});
+    let data = await User.findOne({email: req.body.email});
     const pass =  bcrypt.compareSync(req.body.pass, data.pass);
-    if(!name|| pass === null) return res.json({error: 'faltan datos'});
+    if(!name || pass === null) return res.json({error: 'faltan datos'});
     if(pass === false) return res.json({error: 'ningún usuario coincide con tu usuario y contraseña'});
     else res.status(200).json({sucess: "usuario logeado correctamente", token: createToken(data)})
     return data;
