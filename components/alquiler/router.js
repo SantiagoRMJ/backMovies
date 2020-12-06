@@ -4,6 +4,6 @@ const rentController = require('./controller');
 
 
 router.post('/', rentController.addMovie);
-router.get('/', rentController.getMyMovies);
+router.post('/mymovies', rentController.getMyMovies);
 
 module.exports = router;
