@@ -12,10 +12,10 @@ const rentSchema = new mongoose.Schema({
         required: true,
     },   
     createDate:{
-        type: Date
+        type: String
     },
     returnDate:{
-        type: Date
+        type: String
     }
 })
 
