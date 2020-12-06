@@ -8,11 +8,11 @@ const SECRET_KEY = 'kasjgfdlasjvhxzkcdhsuf'
 
 createToken = (user) =>{
     const payLoad = {
-        id: usuario._id,
-        name: usuario.name,
-        pass: usuario.pass,
-        email: usuario.email,
-        role: usuario.rol,
+        id: user._id,
+        name: user.name,
+        pass: user.pass,
+        email: user.email,
+        role: user.rol,
         createToken: moment().unix(),
         exp: moment().add(3, "hours").unix()
     }   
