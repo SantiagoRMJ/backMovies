@@ -12,12 +12,10 @@ const rentSchema = new mongoose.Schema({
         required: true,
     },   
     createDate:{
-        type: Date,
-        default: moment().calendar() 
+        type: Date
     },
     returnDate:{
-        type: Date,
-        default: moment().add(3, 'days').calendar()
+        type: Date
     }
 })
 
