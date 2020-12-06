@@ -14,7 +14,7 @@ exports.addMovie = async (req, res) => {
        
         res.status(200).json({message: 'Pelicula añadida correctamente', nuevaPelicula: nuevaPelicula});
     } catch (error) {
-        res.status(500).send({message: 'La pelicula no ha podido crearse correctamente'});
+        res.status(500).send({message: error});
     }
 }
 
