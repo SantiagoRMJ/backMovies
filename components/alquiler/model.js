@@ -1,6 +1,4 @@
-
 const mongoose = require("mongoose");
-const moment = require('moment')
 
 const rentSchema = new mongoose.Schema({    
     user_id:{

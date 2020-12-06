@@ -2,9 +2,7 @@ const User = require('./model');
 const moment = require('moment');
 const bcrypt = require('bcryptjs');
 const jwt = require('jwt-simple');
-
 const SECRET_KEY = 'kasjgfdlasjvhxzkcdhsuf'
-
 
 createToken = (user) =>{
     const payLoad = {
@@ -18,7 +16,6 @@ createToken = (user) =>{
     }   
     return jwt.encode(payLoad, SECRET_KEY)
 }
-
 
 exports.registro = async (req, res) => {
     req.body.pass = bcrypt.hashSync(req.body.pass, 3);    

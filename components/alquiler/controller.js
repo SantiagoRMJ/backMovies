@@ -1,8 +1,6 @@
 const Rent = require('./model');
 const moment = require('moment')
 
-
-
 exports.addMovie = async (req, res) => {
     try {
         const nuevaPelicula = await Rent.create({
