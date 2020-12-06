@@ -5,3 +5,5 @@ const rentController = require('./controller');
 
 router.post('/', rentController.addMovie);
 router.get('/', rentController.getMyMovies);
+
+module.exports = router;
